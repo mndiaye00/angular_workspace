@@ -16,5 +16,7 @@ export class AppComponent implements OnInit{
 
     private pokemons : Pokemon[];
 
-
+    selectPokemon(pokemon : Pokemon){
+        alert(pokemon.name);
+    }
 }
