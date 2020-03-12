@@ -1,22 +1,8 @@
-import { Component } from '@angular/core';
-import { Pokemon } from './pokemon';
-import { OnInit } from "@angular/core";
+import { Component} from '@angular/core';
 
 @Component ({
     selector: 'pokemon-app',
-    template: `<h1>Hello {{ name }}</h1>`
+    templateUrl: './app/app.component.html'
 })
 
-export class AppComponent implements OnInit{
-    name = "Moussa";
-
-    ngOnInit(){
-
-    }
-
-    private pokemons : Pokemon[];
-
-    selectPokemon(pokemon : Pokemon){
-        alert(pokemon.name);
-    }
-}
+export class AppComponent{}
