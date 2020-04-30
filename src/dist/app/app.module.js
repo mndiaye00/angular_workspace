@@ -8,26 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var border_card_directive_1 = require("./border-card.directive");
-var pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
-var detail_pokemon_component_1 = require("./detail-pokemon.component");
-var list_pokemon_component_1 = require("./list-pokemon.component");
+var http_1 = require("@angular/common/http");
 var app_routing_module_1 = require("./app-routing.module");
+var pokemons_module_1 = require("./pokemon/pokemons.module");
+var app_component_1 = require("./app.component");
+var pokemons_service_1 = require("./pokemon/pokemons.service");
 var page_not_found_component_1 = require("./page-not-found.component");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data-service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
+            imports: [platform_browser_1.BrowserModule,
+                http_1.HttpClientModule,
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
+                pokemons_module_1.PokemonsModule,
+                app_routing_module_1.AppRoutingModule],
             declarations: [app_component_1.AppComponent,
-                border_card_directive_1.BorderCardDirective,
-                pokemon_type_color_pipe_1.PokemonTypeColorPipe,
-                detail_pokemon_component_1.DetailPokemonComponent,
-                list_pokemon_component_1.ListPokemonComponent,
                 page_not_found_component_1.PageNotFoundComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [pokemons_service_1.PokemonsService]
         })
     ], AppModule);
     return AppModule;

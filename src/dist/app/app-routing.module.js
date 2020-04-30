@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var list_pokemon_component_1 = require("./list-pokemon.component");
-var detail_pokemon_component_1 = require("./detail-pokemon.component");
+var list_pokemon_component_1 = require("./pokemon/list-pokemon.component");
+var detail_pokemon_component_1 = require("./pokemon/detail-pokemon.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // routes
 var appRoutes = [
