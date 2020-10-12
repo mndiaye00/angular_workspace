@@ -13,7 +13,8 @@ import { PokemonsService } from "./pokemons.service";
 export class PokemonFormComponent implements OnInit{
 
     // component input property
-    @Input() pokemon: Pokemon;
+    @Input() 
+    pokemon: Pokemon;
 
     // Possible types of a pokemon
     types: Array<string>;

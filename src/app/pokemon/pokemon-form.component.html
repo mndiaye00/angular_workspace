@@ -9,7 +9,8 @@
             <input type="text" class="form-control" id="name"
                     required
                     pattern="^[a-zA-Z0-9àéèç]{1,25}$"
-                   [(ngModel)]="pokemon.name" name="name"
+                   [(ngModel)]="pokemon.name" 
+                   name="name"
                    #name="ngModel">
     
             <div [hidden]="name.valid || name.pristine"
@@ -24,7 +25,8 @@
             <input type="number" class="form-control" id="hp"
                     required
                     pattern="^[0-9]{1,3}$"
-                   [(ngModel)]="pokemon.hp" name="hp"
+                   [(ngModel)]="pokemon.hp" 
+                   name="hp"
                    #hp="ngModel">
              <div [hidden]="hp.valid || hp.pristine"
                    class="card-panel red accent-1">
@@ -38,7 +40,8 @@
             <input type="number" class="form-control" id="cp"
                     required
                     pattern="^[0-9]{1,2}$"
-                   [(ngModel)]="pokemon.cp" name="cp"
+                   [(ngModel)]="pokemon.cp" 
+                   name="cp"
                    #cp="ngModel">
              <div [hidden]="cp.valid || cp.pristine"
                    class="card-panel red accent-1">

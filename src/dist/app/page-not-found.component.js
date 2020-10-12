@@ -13,7 +13,7 @@ var PageNotFoundComponent = /** @class */ (function () {
     PageNotFoundComponent = __decorate([
         core_1.Component({
             selector: 'page-404',
-            template: "\n    <div class='center'>\n      <img src=\"http://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png\"/>\n      <h1>Hey, cette page n'existe pas !</h1>\n      <a routerLink=\"/pokemons\" class=\"waves-effect waves-teal btn-flat\">\n        Retourner \u00E0 l' accueil\n      </a>\n    </div>\n  "
+            template: "\n    <div class='center'>\n      <img src=\"http://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png\"/>\n      <h1>Hey, cette page n'existe pas !</h1>\n      <a routerLink=\"/pokemon/all\" class=\"waves-effect waves-teal btn-flat\">\n        Retourner \u00E0 l' accueil\n      </a>\n    </div>\n  "
         })
     ], PageNotFoundComponent);
     return PageNotFoundComponent;

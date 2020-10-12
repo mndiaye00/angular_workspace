@@ -8,26 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var page_not_found_component_1 = require("./page-not-found.component");
-// routes
-var appRoutes = [
-    { path: '', redirectTo: 'pokemon/all', pathMatch: 'full' },
-    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
-];
-var AppRoutingModule = /** @class */ (function () {
-    function AppRoutingModule() {
+var auth_service_1 = require("./auth-service");
+var login_component_1 = require("./login.component");
+var LoginRoutingModule = /** @class */ (function () {
+    function LoginRoutingModule() {
     }
-    AppRoutingModule = __decorate([
+    LoginRoutingModule = __decorate([
         core_1.NgModule({
             imports: [
-                router_1.RouterModule.forRoot(appRoutes)
+                router_1.RouterModule.forChild([
+                    { path: 'login', component: login_component_1.LoginComponent }
+                ])
             ],
             exports: [
                 router_1.RouterModule
+            ],
+            providers: [
+                auth_service_1.AuthService
             ]
         })
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], LoginRoutingModule);
+    return LoginRoutingModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.LoginRoutingModule = LoginRoutingModule;
+//# sourceMappingURL=login-routing.module.js.map

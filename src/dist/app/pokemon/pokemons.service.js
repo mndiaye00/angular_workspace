@@ -49,7 +49,7 @@ var PokemonsService = /** @class */ (function () {
     // Retourne tous les pokémons
     PokemonsService.prototype.getPokemons = function () {
         return this.http.get(this.pokemonsUrl)
-            .pipe(operators_1.tap(function (data) { return console.log(JSON.stringify(data)); }), operators_1.catchError(this.handleError("getPokemons", [])));
+            .pipe(operators_1.tap(function (data) { return console.log(JSON.stringify(data)); }));
     };
     // Retourne le pokémon via son identifiant passé en paramètre
     PokemonsService.prototype.getPokemon = function (id) {

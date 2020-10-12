@@ -12,6 +12,7 @@ import { PokemonsService } from "./pokemons.service";
 import {FormsModule} from "@angular/forms"
 import { EditPokemonComponent } from "./edit-pokemon.component";
 import { PokemonFormComponent } from "./pokemon-form.component";
+import { AuthGuard } from "../auth-guard.service";
 
 @NgModule({
     imports:[
@@ -29,7 +30,7 @@ import { PokemonFormComponent } from "./pokemon-form.component";
         PokemonTypeColorPipe
     ],
 
-    providers:[PokemonsService]
+    providers:[PokemonsService, AuthGuard]
 })
 
 export class PokemonsModule{}

@@ -1,10 +1,9 @@
 import {Injectable} from "@angular/core";
 
-import { POKEMONS } from "./mock-pokemon";
 import { Pokemon } from "./pokemon";
 
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {catchError, map, tap} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
 
 @Injectable()
@@ -58,9 +57,8 @@ export class PokemonsService{
     getPokemons() : Observable<Pokemon[]> {
         return this.http.get<Pokemon[]>(this.pokemonsUrl)
         .pipe(
-            tap(data => console.log(JSON.stringify(data))),
-            catchError(this.handleError(`getPokemons`, []))
-        );     
+            tap(data => console.log(JSON.stringify(data)))
+        )  
     }
 
     // Retourne le pokémon via son identifiant passé en paramètre

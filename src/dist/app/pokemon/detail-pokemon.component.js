@@ -20,6 +20,15 @@ var DetailPokemonComponent = /** @class */ (function () {
         this.imageWidth = 100;
         this.imageMargin = 5;
         this.pokemon = null;
+        if (route == null) {
+            throw Error("ActivatedRoute is null or undefined");
+        }
+        if (router == null) {
+            throw Error("Router is null or undefined");
+        }
+        if (pokemonsService == null) {
+            throw Error("PokemonsService is null or undefined");
+        }
     }
     DetailPokemonComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -34,7 +43,7 @@ var DetailPokemonComponent = /** @class */ (function () {
             .subscribe(function (_) { return _this.goBack(); });
     };
     DetailPokemonComponent.prototype.goBack = function () {
-        this.router.navigate(['/pokemons']);
+        this.router.navigate(['/pokemon/all']);
     };
     DetailPokemonComponent.prototype.goEdit = function (pokemon) {
         this.router.navigate(['/pokemon/edit', this.pokemon.id]);

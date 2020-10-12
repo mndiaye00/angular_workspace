@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute, Router, Params} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 import { Pokemon } from "./pokemon";
 import {PokemonsService} from "./pokemons.service";
@@ -17,7 +17,17 @@ export class DetailPokemonComponent implements OnInit{
 
     constructor(private route:ActivatedRoute, 
                 private router: Router, 
-                private pokemonsService: PokemonsService){}
+                private pokemonsService: PokemonsService){
+        if(route == null){
+            throw Error("ActivatedRoute is null or undefined");
+        }
+        if(router == null){
+            throw Error("Router is null or undefined");
+        }
+        if(pokemonsService == null){
+            throw Error("PokemonsService is null or undefined");
+        }
+    }
 
     private pokemon: Pokemon = null;
 
@@ -36,7 +46,7 @@ export class DetailPokemonComponent implements OnInit{
     }
 
     goBack(): void{
-        this.router.navigate(['/pokemons']);
+        this.router.navigate(['/pokemon/all']);
     }
 
     goEdit(pokemon: Pokemon): void{

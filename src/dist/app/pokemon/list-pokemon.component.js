@@ -18,6 +18,12 @@ var ListPokemonComponent = /** @class */ (function () {
         this.pokemonsService = pokemonsService;
         this.pokemons = null;
         this.title = "Liste des pokémons";
+        if (router == null) {
+            throw Error("router is null or undefined");
+        }
+        if (pokemonsService == null) {
+            throw Error("pokemonService is null or undefined");
+        }
     }
     ListPokemonComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -34,7 +40,8 @@ var ListPokemonComponent = /** @class */ (function () {
             selector: 'list-pokemon',
             templateUrl: './app/pokemon/list-pokemon.component.html',
         }),
-        __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
+        __metadata("design:paramtypes", [router_1.Router,
+            pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
     return ListPokemonComponent;
 }());
